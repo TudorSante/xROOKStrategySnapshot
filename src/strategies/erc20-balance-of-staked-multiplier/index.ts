@@ -2,7 +2,6 @@ import { call } from '../../utils';
 import { formatUnits } from '@ethersproject/units';
 import { strategy as erc20BalanceOfStrategy } from '../erc20-balance-of';
 
-
 export const author = 'RaiNFall';
 export const version = '1.0.0';
 
@@ -37,8 +36,7 @@ export async function strategy(
     erc20ABI,
     [options.address, 'totalSupply', []],
     { blockTag }
-  )
-  .then((res) => parseFloat(formatUnits(res, options.decimals)));
+  ).then((res) => parseFloat(formatUnits(res, options.decimals)));
   // console.log(`Total supply of xROOK: ${stkTotalSupply}`);
 
   const tokenStakedTotalBalance = await call(
@@ -46,10 +44,9 @@ export async function strategy(
     erc20ABI,
     [options.baseStkToken, 'balanceOf', [options.liqPoolContract]],
     { blockTag }
-  )
-  .then((res) => parseFloat(formatUnits(res, options.decimals)));
+  ).then((res) => parseFloat(formatUnits(res, options.decimals)));
   // console.log(`Total ROOK staked: ${tokenStakedTotalBalance}`);
-  
+
   // compute the underlying coeff giving the value of xROOK in terms of ROOK
   const underlyingCoeff = tokenStakedTotalBalance / stkTotalSupply;
   // console.log(`xROOK:ROOK coeff: ${underlyingCoeff}`);
