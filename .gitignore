@@ -1,12 +1,12 @@
 .DS_Store
 node_modules
 dist
-yarn.lock
 .gitignore
 *.bak
 
 # remove testing scripts
-test/rook_scores.ts
+[...]_scores.ts
+test/
 
 # Remove some common IDE working directories
 .idea
