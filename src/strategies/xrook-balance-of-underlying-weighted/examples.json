@@ -2,14 +2,14 @@
   {
     "name": "Example query",
     "strategy": {
-      "name": "erc20-balance-of-staked-multiplier",
+      "name": "xrook-balance-of-underlying-weighted",
       "params": {
         "symbol": "xROOK",
         "address": "0x8aC32F0a635a0896a8428A9c31fBf1AB06ecf489",
         "decimals": 18,
-        "stakingCoeff": 1.2,
-        "baseStkToken": "0xfA5047c9c78B8877af97BDcb85Db743fD7313d4a",
-        "liqPoolContract": "0x4F868C1aa37fCf307ab38D215382e88FCA6275E2"
+        "weight": 1.2,
+        "underlyingTokenAddress": "0xfA5047c9c78B8877af97BDcb85Db743fD7313d4a",
+        "liquidityPoolAddress": "0x4F868C1aa37fCf307ab38D215382e88FCA6275E2"
       }
     },
     "network": "1",
